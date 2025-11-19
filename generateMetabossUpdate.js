@@ -3,11 +3,33 @@ const path = require('path');
 
 async function generateMetabossUpdateFile() {
   try {
-    // Load the existing metadata to get mint accounts
-    const metadataPath = path.join(__dirname, 'chimpions_metadata.json');
-    const metadataContent = await fs.readFile(metadataPath, 'utf-8');
-    const allMetadata = JSON.parse(metadataContent);
-    
+    // Load the NFT mint mapping file
+    const mintMappingPath = path.join(__dirname, 'nft_mints.json');
+    let allMetadata = [];
+
+    try {
+      const mintMappingContent = await fs.readFile(mintMappingPath, 'utf-8');
+      const mintMapping = JSON.parse(mintMappingContent);
+
+      // Convert mapping to array format
+      allMetadata = Object.entries(mintMapping).map(([folderName, data]) => {
+        // Handle both simple string format and object format
+        if (typeof data === 'string') {
+          return { name: folderName, mint: data };
+        } else {
+          return {
+            name: data.name || folderName,
+            mint: data.mint,
+            uri: data.old_uri || ''
+          };
+        }
+      });
+    } catch (error) {
+      console.error('Error loading nft_mints.json. Please create this file with your NFT mint addresses.');
+      console.error('See README.md for the expected format.');
+      return;
+    }
+
     // Load the Arweave upload log
     const uploadLogPath = path.join(__dirname, 'arweave_uploads_log.json');
     let uploadLog;

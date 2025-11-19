@@ -51,9 +51,17 @@ async function uploadJsonToArweave(jsonPath) {
   }
 }
 
-// Run for TheBinary
+// Command line usage
 if (require.main === module) {
-  const jsonPath = path.join(__dirname, 'chimpions_v2', 'TheBinary', 'TheBinary.json');
+  const args = process.argv.slice(2);
+
+  if (args.length === 0) {
+    console.log('Usage: node uploadJsonToArweave.js <path-to-json-file>');
+    console.log('Example: node uploadJsonToArweave.js nftcollection/Firestarter/Firestarter.json');
+    process.exit(1);
+  }
+
+  const jsonPath = args[0];
   uploadJsonToArweave(jsonPath);
 }
 

@@ -35,7 +35,7 @@ npm install
 Organize your NFT files like this:
 
 ```
-chimpions-metadata/
+nft-arweave-uploader/
 ├── nftcollection/             # Your NFT directory
 │   ├── Firestarter/           # Individual NFT folder
 │   │   ├── Firestarter.json              # Metadata JSON (required)
@@ -186,13 +186,13 @@ Create `nft_mints.json` in your project root mapping folder names to mint addres
 }
 ```
 
-The folder names must **exactly match** your directory names in `chimpions_v2/`.
+The folder names must **exactly match** your directory names in `nftcollection/`.
 
 **Approach 2: Fetch from collection** (For existing collections)
 If you have an existing NFT collection, use a fetch script to get all mint addresses:
 - Use Helius DAS API or similar RPC to fetch collection NFTs
 - Extract mint addresses and names
-- Save to `chimpions_metadata.json` (or similar)
+- Save to `nft_mints.json` (or similar)
 
 The `generateMetabossUpdate.js` script matches folder names to NFT names to find mint addresses.
 
@@ -320,7 +320,7 @@ This prevents hitting Arweave rate limits.
 - Wait a few minutes and retry
 
 **Missing NFT folders**
-- Verify folder structure matches `chimpions_v2/{NFT_NAME}/`
+- Verify folder structure matches `nftcollection/{NFT_NAME}/`
 - Check that folders contain `.json` and image files
 
 ## Advanced Usage
@@ -363,7 +363,7 @@ const contentTypes = {
 
 ### NFT Update Utilities (Requires mint addresses)
 - `generateMetabossUpdate.js` - Generate Metaboss update files from Arweave uploads
-  - Requires: `chimpions_metadata.json` with mint addresses
+  - Requires: `nft_mints.json` with mint addresses
   - Generates: `metaboss_uri_updates.json`
 - `validateMints.js` - Validate NFT mint addresses before updating
 - `splitMetabossFile.js` - Split large update files into smaller batches

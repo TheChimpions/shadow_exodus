@@ -1,7 +1,7 @@
 {
-  "name": "chimpions-metadata",
+  "name": "shadow-exodus",
   "version": "1.0.0",
-  "description": "",
+  "description": "Upload NFT metadata and images to Arweave and update Solana NFT URIs",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

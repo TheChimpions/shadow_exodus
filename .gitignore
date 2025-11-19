@@ -5,11 +5,11 @@ arweave-wallet.json
 
 # NFT data and metadata
 /chimpions_v2/
-chimpions_metadata*.json
-chimpions_metadata*.csv
-chimpions_quick_metadata*.json
-chimpions_quick_metadata*.csv
-chimpions_fetch.log
+nft_metadata*.json
+nft_metadata*.csv
+*_metadata*.json
+*_metadata*.csv
+*.log
 
 # Example NFT collection (keep structure, ignore large files)
 nftcollection/**/*.png
