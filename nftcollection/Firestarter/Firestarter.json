@@ -1,0 +1,31 @@
+{
+  "name": "Firestarter",
+  "symbol": "FIRE",
+  "description": "A blazing NFT that ignites the collection",
+  "seller_fee_basis_points": 500,
+  "image": "",
+  "attributes": [
+    {
+      "trait_type": "Element",
+      "value": "Fire"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Legendary"
+    },
+    {
+      "trait_type": "Artist",
+      "value": "@example_artist"
+    }
+  ],
+  "properties": {
+    "files": [],
+    "category": "image",
+    "creators": [
+      {
+        "address": "YourCreatorWalletAddressHere",
+        "share": 100
+      }
+    ]
+  }
+}
