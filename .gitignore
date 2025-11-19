@@ -1,0 +1,59 @@
+# Sensitive wallet files
+arweave-wallet.json
+*-keypair.json
+*.pem
+
+# NFT data and metadata
+/chimpions_v2/
+nft_metadata*.json
+nft_metadata*.csv
+*_metadata*.json
+*_metadata*.csv
+*.log
+
+# Example NFT collection (keep structure, ignore large files)
+nftcollection/**/*.png
+nftcollection/**/*.jpg
+nftcollection/**/*.gif
+nftcollection/**/*.webp
+nftcollection/**/*.svg
+nftcollection/**/*.mp4
+nftcollection/**/*_arweave_url.txt
+
+# Generated output files
+arweave_uploads_log.json
+metaboss_uri_updates.json
+nft_arweave_mapping.json
+mb-cache-update-uri-all.json
+*_arweave_url.txt
+
+# Dependencies
+node_modules/
+package-lock.json
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment
+.env
+.env.local
+.env.*.local
